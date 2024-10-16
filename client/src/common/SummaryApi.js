@@ -1,0 +1,1 @@
+ export const apiUrl = "https://chat-app-omega-ebon.vercel.app";
