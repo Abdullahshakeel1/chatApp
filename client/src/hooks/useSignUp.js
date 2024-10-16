@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuthcontext } from "../context/AutContext";
 import toast from "react-hot-toast";
-import { apiUrl } from "../common/SummaryApi";
 
 const handleInputErrors = ({ username, email, password, confirmPassword, gender }) => {
     if (!username || !email || !password || !confirmPassword || !gender) {
@@ -33,7 +32,7 @@ const useSignUp = () => {
 
         try {
             setLoading(true);
-            const res = await fetch(`${apiUrl}/api/auth/signup`, {
+            const res = await fetch("/api/auth/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

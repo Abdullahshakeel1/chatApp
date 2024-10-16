@@ -7,11 +7,17 @@ import { connectDB } from "./Db_connection.js";
 import { messageRoute } from "./routers/massege.route.js";
 import { authRoute } from "./routers/auth.route.js";
 import { userRoute } from "./routers/user.route.js";
+import cors from 'cors'
 
 dotenv.config();
 
 // Initialize Express
 const app = express();
+app.use(cors({
+    origin: 'http://localhost:5173', // Adjust this to match your frontend URL
+    methods: ['GET', 'POST'],
+    credentials: true // Allow credentials to be sent
+}));
 
 // Create HTTP server
 const server = http.createServer(app);
@@ -19,8 +25,9 @@ const server = http.createServer(app);
 // Setup Socket.IO with CORS
  const io = new Server(server, {
     cors: {
-        origin:'http://localhost:5173',
-        methods: ['GET', 'POST']
+        origin: '*',
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 export const getReceiverSocketId =(receiverId)=>{

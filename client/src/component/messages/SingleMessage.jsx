@@ -12,7 +12,7 @@ const SingleMessage = ({ message }) => {
   const msgBgColor = messageFromMe ? "bg-green-500" : ""
   const formattedTime = formatTime(message.createdAt)
 
-  console.log(selectedConversation); // Debugging line to check the data
+  // console.log(selectedConversation); // Debugging line to check the data
 
   return (
     <div className={`chat ${chatClassName}`}>

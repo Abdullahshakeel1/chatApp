@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useAuthcontext } from './AutContext'
 import { io } from 'socket.io-client'
-import { apiUrl } from '../common/SummaryApi'
 
 export const socketContext = createContext()
 export const useSocketContext= ()=>{
@@ -13,7 +12,7 @@ export const SocketContextProvider =({children})=>{
     const {authUser}=useAuthcontext()
     useEffect(() => {
         if (authUser) {
-            const socket = io(apiUrl, {
+            const socket = io('https://chat-app-omega-ebon.vercel.app', {
                 query: { userId: authUser._id }
             });
             setSocket(socket);

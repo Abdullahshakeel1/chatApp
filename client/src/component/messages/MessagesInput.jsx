@@ -10,7 +10,7 @@ const MessagesInput = () => {
     if(!message){
       return
     }
-    console.log(message)
+    // console.log(message)
     await sendMessage(message)
     setMessage('')
 
