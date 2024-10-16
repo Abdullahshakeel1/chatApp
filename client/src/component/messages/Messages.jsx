@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import SingleMessage from './singleMessage';
+import SingleMessage from './SingleMessage';
 import useGetMessage from '../../hooks/useGetMessage';
 import useListenMessages from '../../hooks/useListenMessages';
 
