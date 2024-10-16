@@ -14,7 +14,7 @@ dotenv.config();
 // Initialize Express
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173', // Adjust this to match your frontend URL
+    origin: 'https://chat-app-vp7f.vercel.app', // Adjust this to match your frontend URL
     methods: ['GET', 'POST'],
     credentials: true // Allow credentials to be sent
 }));
