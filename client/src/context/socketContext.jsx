@@ -13,7 +13,7 @@ export const SocketContextProvider =({children})=>{
     useEffect(() => {
         if (authUser) {
             const socket = io('https://chat-app-omega-ebon.vercel.app', {
-                auth: { userId: authUser._id }
+                query: { userId: authUser._id }
             });
             setSocket(socket);
     
